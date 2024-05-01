@@ -1,0 +1,16 @@
+.header {
+    background-color: #add8e6; /* Bleu ciel */
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+  
+  .left a,
+  .right a {
+    margin-right: 10px;
+  }
+  
+  .right a:last-child {
+    margin-right: 0;
+  }
+  

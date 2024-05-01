@@ -1,0 +1,16 @@
+.table-facture {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .ligne-facture {
+    display: flex;
+  }
+  
+  .ligne-facture > div {
+    flex: 5;
+    padding: 20px;
+  }
+  
+  
+  

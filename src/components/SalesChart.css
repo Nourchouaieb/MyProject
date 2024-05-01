@@ -1,0 +1,13 @@
+/* SalesChart.css */
+
+/* Style du conteneur du graphique */
+.sales-chart-container {
+    margin-top: 20px;
+  }
+  
+  /* Style du titre */
+  .sales-chart-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  

@@ -1,0 +1,45 @@
+.gray-background {
+    background-color : rgb(241, 240, 240); 
+    color: skyblue;
+    min-height: 100vh;
+  }
+  
+.header-top {
+    background-color: #fff ;
+    padding: 10px 0;
+   
+      }
+
+
+.header {
+    background-color: #add8e6; /* Bleu ciel */
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+  
+  .accueil-page {
+    display: flex;
+    background-color: #fff; /* Blanc */
+  }
+  
+  .left-sidebar {
+    width: 25%;
+    background-color: #000; /* Noir */
+    color: #fff; /* Blanc */
+  }
+  
+  .right-side {
+    width: 75%;
+    padding: 20px;
+
+
+  }
+  
+  .left-sidebar h2,
+  .left-sidebar h3 {
+    margin: 10px 0;
+  }
+  
+  
+  

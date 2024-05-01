@@ -1,0 +1,49 @@
+/* Styles pour le composant PaidInvoicesTable */
+
+/* Style du conteneur */
+.paid-invoices-table {
+    margin-top: 20px;
+  }
+  
+  /* Style du titre */
+  .paid-invoices-table h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  /* Style du tableau */
+  .paid-invoices-table table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+  }
+  
+  /* Style de l'en-tête du tableau */
+  .paid-invoices-table th {
+    background-color: #f2f2f2;
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Style des cellules du tableau */
+  .paid-invoices-table td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Style des lignes impaires du tableau */
+  .paid-invoices-table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Style des cellules de montant payé avec une couleur différente si le montant est supérieur à un certain seuil */
+  .paid-invoices-table td.amount-paid {
+    color: green;
+  }
+  
+  /* Style des cellules de montant payé avec une couleur différente si le montant est inférieur à un certain seuil */
+  .paid-invoices-table td.amount-due {
+    color: red;
+  }
+  

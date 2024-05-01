@@ -1,0 +1,52 @@
+/* devis.css */
+
+/* Style de la page principale */
+.devis-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  /* Style de la partie gauche */
+  .left-side {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  /* Style de la partie droite */
+  .right-side {
+    flex: 1;
+  }
+  
+  /* Style des formulaires */
+  .new-devis-form {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  /* Style des boutons */
+  .green-button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .blue-button {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
