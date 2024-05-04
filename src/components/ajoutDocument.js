@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const ajoutDocument = () => {
+const AjoutDocument = () => {
   const [donneesFacture, setDonneesFacture] = useState({
     nomEntreprise: '',
     numeroFacture: '',
@@ -128,4 +128,4 @@ const ajoutDocument = () => {
   );
 };
 
-export default ajoutDocument;
+export default AjoutDocument;

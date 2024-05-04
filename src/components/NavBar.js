@@ -16,6 +16,8 @@ const NavBar = () => {
           <a href="/Clients">Clients</a>
           <a href="/Factures">Factures</a>
           <a href="/Devis">Devis</a>
+          <a href="/dashbords">Rapports</a>
+
         
         </div>
         <div className="right">

@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import './facture.css'; 
-
-
 const Facture = () => {
   const [showOptions, setShowOptions] = useState(false); 
   const [showNewFactureForm, setShowNewFactureForm] = useState(false);
+  const [selectedFacture, setSelectedFacture] = useState(null);
   const [newFacture, setNewFacture] = useState({
     numero: '',
     montant: '',
@@ -23,6 +22,8 @@ const Facture = () => {
   const handleCancel = () => {
     setShowNewFactureForm(false);
   };
+
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -51,6 +52,17 @@ const Facture = () => {
 
     setShowNewFactureForm(false);
   };
+  const handleEditFacture= () => {
+  };
+  const handleDeleteFacture = () => {
+    if (selectedFacture) {
+      const updatedFactures = factures.filter(Facture => Facture !== selectedFacture);
+      setFactures(updatedFactures);
+      setSelectedFacture(null);
+    }
+
+  };
+
 
   return (
     <div className="facture-page">
@@ -107,8 +119,22 @@ const Facture = () => {
         </div>
       </div>
       <div className="right-side">
-        <h1>Factures</h1>
-        <p>Sélectionnez une facture dans la liste de gauche pour voir ses détails</p>
+        <h1>Exemple De Factures</h1>
+        {selectedFacture ? (
+          <div>
+            <p>Numéro: {selectedFacture.numero}</p>
+            <p>Montant: {selectedFacture.montant}</p>
+            <p>Date: {selectedFacture.date}</p>
+            <div>
+              <button onClick={handleEditFacture}>Modifier</button>
+              <button onClick={handleDeleteFacture}>Supprimer</button>
+            </div>
+            <button onClick={() => setSelectedFacture(null)}>Fermer</button>
+          </div>
+        ) : (
+          <p>Sélectionnez une facture dans la liste de gauche pour voir ses détails</p>
+        )}
+      
       </div>
     </div>
   );

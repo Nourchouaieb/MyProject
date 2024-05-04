@@ -9,7 +9,8 @@ import Facture from './components/facture';
 import Devis from './components/devis';
 import CreeFacture from './components/creeFacture';
 import AjoutDocument from './components/ajoutDocument';
-
+import Moncompte from './components/moncompte';
+import Dashboards from './components/dashbords';
 
 function App() { 
 
@@ -26,6 +27,9 @@ function App() {
           <Route path="/Devis" element={<Devis />} />
           <Route path="/creeFacture" element={<CreeFacture />} />
           <Route path="/ajoutDocument" element={<AjoutDocument/>} />
+          <Route path="/moncompte" element={<Moncompte/>} />
+          <Route path="/dashbords" element={<Dashboards/>} />
+
 
 
 

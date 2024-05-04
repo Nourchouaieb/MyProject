@@ -1,8 +1,5 @@
-import React, { useState } from 'react';
+ import React, { useState } from 'react';
 import './produit.css'; 
-// import NavBar from './components/NavBar';
-
-/*import { Navbar } from 'react-bootstrap';*/
 
 const Produit = () => {
   const [showNewProduitForm, setShowNewProduitForm] = useState(false);
@@ -15,6 +12,7 @@ const Produit = () => {
   });
   const [produits, setProduits] = useState([]); 
   const [produitCount, setProduitCount] = useState(0); 
+  const [selectedProduit, setSelectedProduit] = useState(null);
 
   const handleNewProduit = () => {
     setShowNewProduitForm(true);
@@ -23,6 +21,17 @@ const Produit = () => {
   const handleCancel = () => {
     setShowNewProduitForm(false);
   };
+  const handleEditProduit = () => {
+  };
+
+  const handleDeleteProduit = () => {
+    if (selectedProduit) {
+      const updatedProduits = produits.filter(produit => produit !== selectedProduit);
+      setProduits(updatedProduits);
+      setSelectedProduit(null);
+    }
+  };
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -57,11 +66,15 @@ const Produit = () => {
     setShowNewProduitForm(false);
   };
 
+  const handleProduitClick = (produit) => {
+    setSelectedProduit(produit);
+  };
+
   return (
     <div className="produit-page">
       <div className="left-side">
         <div className="left-top">
-        <input type="text" placeholder="Recherche..." />
+          <input type="text" placeholder="Recherche..." />
           <button onClick={handleNewProduit} className="green-button">Nouveau produit</button>
         </div>
         <div className="main-content">
@@ -74,9 +87,9 @@ const Produit = () => {
               </div>
               <div className="form-group">
                 <label htmlFor="type de produit">type de produit :</label>
-                  <select id="type de produit">
-                    <option value="Biens">Biens</option>
-                    <option value="Services">Services</option>
+                <select id="type de produit">
+                  <option value="Biens">Biens</option>
+                  <option value="Services">Services</option>
                 </select>
               </div>
               <div className="form-group">
@@ -113,7 +126,7 @@ const Produit = () => {
                 </thead>
                 <tbody>
                   {produits.map((produit, index) => (
-                    <tr key={index}>
+                    <tr key={index} onClick={() => handleProduitClick(produit)}>
                       <td>{produit.numero}</td>
                       <td>{produit.nom}</td>
                       <td>{produit.typedeproduit}</td>
@@ -129,12 +142,29 @@ const Produit = () => {
         </div>
       </div>
       <div className="right-side">
-        <h1>Mes Produits</h1>
-        <p>Sélectionnez un produit dans la liste de gauche pour voir ses détails</p>
-        <button>Importer Produit</button>
+        <h1>Produits et Services</h1>
+        {selectedProduit ? (
+          <div>
+            <h2>Exemple de produit </h2>
+            <p>Type De Produit: {selectedProduit.typedeproduit}</p>
+            <p>Nom: {selectedProduit.nom}</p>
+            <p>Unité: {selectedProduit.unite}</p>
+            <p>Prix: {selectedProduit.prix}</p>
+            <p>TVA: {selectedProduit.tva}</p>
+            <div>
+              <button onClick={handleEditProduit}>Modifier</button>
+              <button onClick={handleDeleteProduit}>Supprimer</button>
+            </div>
+            <button onClick={() => setSelectedProduit(null)}>Fermer</button>
+          </div>
+        ) : (
+          <p>Sélectionnez un produit dans la liste de gauche pour voir un produit d'exemple </p>
+        )}
+       
       </div>
     </div>
   );
 };
 
 export default Produit;
+
